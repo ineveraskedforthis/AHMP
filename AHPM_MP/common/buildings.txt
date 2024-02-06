@@ -165,6 +165,27 @@ machine_parts_factory = {
     strategic_factory = yes
 }
 
+primitive_machine_parts_factory = {
+    type = factory
+
+    on_completion = factory
+    completion_size = 0.2
+    max_level = 99
+    goods_cost =
+    {
+        machine_parts = 200
+        steel = 200
+        cement = 200
+    }
+    time = 244
+    visibility = yes
+    onmap = no
+
+    production_type = primitive_machine_parts_factory
+    pop_build_factory = yes
+    strategic_factory = yes
+}
+
 synthetic_oil_factory = {
     type = factory
 
@@ -557,6 +578,24 @@ lumber_mill = {
     production_type = lumber_mill
     pop_build_factory = yes
 }
+lumber_mill_tropical = {
+    type = factory
+    on_completion = factory
+    completion_size = 0.2
+    max_level = 99
+    goods_cost =
+    {
+        machine_parts = 20
+        iron = 200
+        cement = 200
+    }
+    time = 244
+    visibility = yes
+    onmap = no
+
+    production_type = lumber_mill_tropical
+    pop_build_factory = yes
+}
 
 fabric_factory = {
     type = factory
@@ -574,6 +613,25 @@ fabric_factory = {
     onmap = no
 
     production_type = fabric_factory
+    pop_build_factory = yes
+}
+
+fabric_silk_factory = {
+    type = factory
+    on_completion = factory
+    completion_size = 0.2
+    max_level = 99
+    goods_cost =
+    {
+        machine_parts = 20
+        iron = 200
+        cement = 200
+    }
+    time = 244
+    visibility = yes
+    onmap = no
+
+    production_type = fabric_silk_factory
     pop_build_factory = yes
 }
 

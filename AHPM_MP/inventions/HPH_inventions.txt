@@ -1253,6 +1253,7 @@ industrial_sawmills = {
     }
     effect = {
         activate_building = lumber_mill
+        activate_building = lumber_mill_tropical
     }
 }
 

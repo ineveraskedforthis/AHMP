@@ -18,7 +18,6 @@ rebel = {
 
 
 everyday_needs = {
-    coal = 1
 }
 
 luxury_needs = {

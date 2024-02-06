@@ -30,9 +30,40 @@ factory_template = {
     workforce = 10000
 }
 
+factory_dye_template = {
+    efficiency = {
+        cement = 0.5 #if no cement, work at 75% efficiency #cost = 8
+        machine_parts = 0.05 # was 0.01 cost = 36.5        # 9.825/day/level for both
+	dye = 2.0
+    }
+
+    owner = {
+        poptype = capitalists
+        effect = input
+        effect_multiplier = -2.5
+    }
+
+    employees = {
+        {
+            poptype = craftsmen
+            effect = throughput
+            amount = 0.8
+        }
+        {
+            poptype = clerks
+            effect = output
+            effect_multiplier = 1.5
+            amount = 0.2
+        }
+
+    }
+    type = factory
+    workforce = 10000
+}
+
 cheap_factory_template = {
     efficiency = {
-        cement = 0.25 #if no cement, work at 75% efficiency #cost = £4/level
+        cement = 0.25 #if no cement, work at 75% efficiency #cost = ï¿½4/level
     }
 
     owner = {
@@ -269,6 +300,24 @@ machine_parts_factory = {
     }
 }
 
+primitive_machine_parts_factory = {
+    template = cheap_factory_template
+    input_goods = {
+        lumber = 10
+        iron = 1
+    }
+    output_goods = machine_parts
+    value = 0.1
+    bonus = {
+        trigger = { has_building = lumber_mill }
+        value = 0.125
+    }
+    bonus = {
+        trigger = { trade_goods_in_state = iron }
+        value = 0.125
+    }
+}
+
 synthetic_oil_factory = {
     template = factory_template
     input_goods = {
@@ -375,7 +424,7 @@ steel_factory = {
     }
 
     output_goods = steel
-    value = 23    #108.1 - profit = 16.8
+    value = 20    #108.1 - profit = 16.8
     bonus = {
         trigger = { trade_goods_in_state = iron }
         value = 0.125
@@ -618,7 +667,20 @@ lumber_mill = {
     }
     output_goods = lumber
 
-    value = 107            #107 - profit = 7
+    value = 100            #107 - profit = 7
+    bonus = {
+        trigger = { trade_goods_in_state = timber }
+        value = 0.25
+    }
+}
+lumber_mill_tropical = {
+    template = factory_template
+    input_goods = {
+        tropical_wood = 50        #90    total input+maint = 100
+    }
+    output_goods = lumber
+
+    value = 100            #107 - profit = 7
     bonus = {
         trigger = { trade_goods_in_state = timber }
         value = 0.25
@@ -626,15 +688,36 @@ lumber_mill = {
 }
 
 fabric_factory = {
-    template = factory_template
+    template = factory_dye_template
     input_goods = {
-        cotton = 18        # 36
-        dye = 2                # 24 total input+maint = 69.875
+        cotton = 44        # 36
     }
     output_goods = fabric
     value = 44            #79.2 - profit = 9.3
     bonus = {
         trigger = { trade_goods_in_state = cotton }
+        value = 0.125
+    }
+    bonus = {
+        trigger = {
+            OR = {
+                has_building = dye_factory
+                trade_goods_in_state = dye
+                }
+            }
+        value = 0.125
+    }
+}
+
+fabric_silk_factory = {
+    template = factory_dye_template
+    input_goods = {
+        silk = 22
+    }
+    output_goods = fabric
+    value = 44
+    bonus = {
+        trigger = { trade_goods_in_state = silk }
         value = 0.125
     }
     bonus = {
