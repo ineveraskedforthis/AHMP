@@ -1253,7 +1253,7 @@ industrial_sawmills = {
     }
     effect = {
         activate_building = lumber_mill
-        activate_building = lumber_mill_tropical
+        activate_building = lumber_mill_tropical_wood
     }
 }
 
@@ -1277,6 +1277,7 @@ canning_process = {
     }
     effect = {
         activate_building = canned_food_factory
+        activate_building = canned_food_factory_fish
     }
 }
 

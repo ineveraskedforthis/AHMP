@@ -19,17 +19,19 @@ guard = {
     #Building Costs
     build_time = 90
     build_cost = {
-        small_arms = 10
-        canned_food = 10
-        liquor = 10
-        luxury_clothes = 5
+        small_arms = 1
+        luxury_clothes = 1
+        artillery = 0.1
     }
 
     supply_consumption = 1.0
     supply_cost = {
-        small_arms = 0.02 #0.015
-        canned_food = 0.07 # 0.08
-        ammunition = 0.1 #0
+        small_arms = 0.1
+        luxury_clothes = 0.1
+        artillery = 0.01
+
+        canned_food = 0.1
+        ammunition = 0.1
     }
 
     #Land Abilties
